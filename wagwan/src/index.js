@@ -1,9 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-function FunctionComponent() {
-  return <h1>This is a function component</h1>;
+class ClassComponent1 extends React.Component {
+  render() {
+    return <ClassComponent2 />;
+  }
+}
+
+class ClassComponent2 extends React.Component {
+  render() {
+    return <h1>Dario da goat 2</h1>;
+  }
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<FunctionComponent />);
+root.render(<ClassComponent1 />);
