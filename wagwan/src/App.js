@@ -1,8 +1,11 @@
+// App.js
+
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
-import logo from './logo192.png';
+import Dashboard from './Dashboard'; // Corrected import statement
 import Questionnaire from './Questionnaire';
+import logo from './logo192.png';
 
 function Login() {
   const [employeeID, setEmployeeID] = useState('');
@@ -11,7 +14,7 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate('/questionnaire');
+    navigate('/dashboard'); // Navigate to dashboard after login
   };
 
   return (
@@ -30,7 +33,7 @@ function Login() {
               required
             />
             <input
-              type="text"
+              type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
@@ -49,6 +52,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/questionnaire" element={<Questionnaire />} />
           <Route path="/" element={<Login />} />
         </Routes>
