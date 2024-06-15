@@ -54,6 +54,10 @@ function App() {
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/questionnaire" element={<Questionnaire />} />
+          <Route path="/enps" element={<div>E-NPS Page</div>} />
+          <Route path="/esat" element={<div>E-SAT Page</div>} />
+          <Route path="/ees" element={<div>E-ES Page</div>} />
+          <Route path="/feedback" element={<div>Most Common Feedback Page</div>} />
           <Route path="/" element={<Login />} />
         </Routes>
       </div>
