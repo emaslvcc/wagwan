@@ -6,7 +6,7 @@ import { GoGear } from 'react-icons/go';
 import { HiOutlineMenu } from 'react-icons/hi'; // Correct import based on available icons
 import { IoHomeOutline } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
-import './App.css';
+import './Dashboard.css';
 
 function Dashboard() {
   const navigate = useNavigate();
