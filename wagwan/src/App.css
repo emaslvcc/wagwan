@@ -23,7 +23,7 @@ body {
 }
 
 .App-header {
-  background-color: #feebca;
+  background-color: #edffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -33,13 +33,14 @@ body {
 
 p {
   font-size: 14px;
-  color: #3f2e1e; 
+  color: #253236; 
   margin-top: 0;
+  margin-bottom: 2;
 }
 
 h1 {
   font-size: 25px;
-  color: #3f2e1e; 
+  color: #253236; 
   margin-bottom: 0;
 }
 
@@ -67,14 +68,14 @@ input {
   font-size: 16px;
   margin-bottom: 20px;
   width: 300px;
-  border: 1px solid #3f2e1e;
+  border: 1px solid #253236;
   border-radius: 5px;
 }
 
 button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #3f2e1e;
+  background-color: #253236;
   color: white;
   border: none;
   border-radius: 5px;
@@ -82,5 +83,5 @@ button {
 }
 
 button:hover {
-  background-color: #444;
+  background-color: #9cb4c0;
 }
