@@ -1,86 +1,41 @@
-/* App.css */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
-
-body {
-  font-family: 'Quicksand', sans-serif;
-  color: #3f2e1e;
-}
-
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 75px; /* Adjust this value to your desired height */
-  width: auto; /* This will maintain the aspect ratio */
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-zoom infinite 5s ease-in-out;
-  }
-}
-
-.App-header {
-  background-color: #feebca;
+.Login-header {
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-p {
-  font-size: 14px;
-  color: #3f2e1e; 
-  margin-top: 0;
-}
-
-h1 {
-  font-size: 25px;
-  color: #3f2e1e; 
-  margin-bottom: 0;
-}
-
-@keyframes App-logo-zoom {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+.Login-logo {
+  height: 100px; /* Adjust the height to make the logo smaller */
+  pointer-events: none;
 }
 
 .login-container {
-  text-align: center;
   margin-top: 20px;
 }
 
-input {
-  display: block;
-  margin: 0 auto;
+.login-container input {
+  margin: 10px;
   padding: 10px;
-  font-size: 16px;
-  margin-bottom: 20px;
-  width: 300px;
-  border: 1px solid #3f2e1e;
-  border-radius: 5px;
+  width: 250px;
 }
 
-button {
+.login-container button {
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #3f2e1e;
-  color: white;
+  background-color: #61dafb;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #444;
+.login-container button:hover {
+  background-color: #21a1f1;
 }
