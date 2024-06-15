@@ -6,11 +6,11 @@ import Questionnaire from './Questionnaire';
 
 function Login() {
   const [employeeID, setEmployeeID] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Directly navigate to the questionnaire page
     navigate('/questionnaire');
   };
 
@@ -27,6 +27,13 @@ function Login() {
               value={employeeID}
               onChange={(e) => setEmployeeID(e.target.value)}
               placeholder="Employee ID (eg., e6352037)"
+              required
+            />
+            <input
+              type="text"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
               required
             />
             <button type="submit">Login</button>
