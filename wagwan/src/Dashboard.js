@@ -1,12 +1,12 @@
 // Dashboard.js
-
 import React from 'react';
 import { CiFilter } from 'react-icons/ci';
 import { GoGear } from 'react-icons/go';
-import { HiOutlineMenu } from 'react-icons/hi'; // Correct import based on available icons
+import { HiOutlineMenu } from 'react-icons/hi';
 import { IoHomeOutline } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
+import LineChart from './LineChart';
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ function Dashboard() {
     <div className="dashboard">
       <div className="sidebar">
         <button onClick={() => handleNavigation('/')} className="icon-button">
-          <HiOutlineMenu size={20} /> {/* Use HiOutlineMenu or the correct icon name */}
+          <HiOutlineMenu size={20} />
         </button>
         <button onClick={() => handleNavigation('/home')} className="icon-button">
           <IoHomeOutline size={20} />
@@ -34,7 +34,7 @@ function Dashboard() {
       <div className="content">
         <div className="rectangles">
           <div className="rectangle" onClick={() => handleNavigation('/enps')}>
-            <h3>E-NPS</h3>
+            <LineChart />
           </div>
           <div className="rectangle" onClick={() => handleNavigation('/esat')}>
             <h3>E-SAT</h3>
