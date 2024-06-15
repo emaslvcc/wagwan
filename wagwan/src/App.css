@@ -87,11 +87,14 @@ body {
 .sidebar button {
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #4682b4; /* Button background color */
+  background-color: #b0c4de; /* Match button background color with sidebar */
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sidebar button:hover {

@@ -1,12 +1,12 @@
 // Dashboard.js
 
 import React from 'react';
+import { CiFilter } from 'react-icons/ci';
+import { GoGear } from 'react-icons/go';
+import { HiOutlineMenu } from 'react-icons/hi'; // Correct import based on available icons
+import { IoHomeOutline } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
-import { FaBeer } from "react-icons/fa";
-import { IoHomeOutline } from "react-icons/io5";
-import { HiBars3 } from "react-icons/hi2";
-import { GoGear } from "react-icons/go";
-import { CiFilter } from "react-icons/ci";
+import './App.css';
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ function Dashboard() {
     <div className="dashboard">
       <div className="sidebar">
         <button onClick={() => handleNavigation('/')} className="icon-button">
-          <HiBars3 size={20} />
+          <HiOutlineMenu size={20} /> {/* Use HiOutlineMenu or the correct icon name */}
         </button>
         <button onClick={() => handleNavigation('/home')} className="icon-button">
           <IoHomeOutline size={20} />
