@@ -18,30 +18,10 @@ export const metadata = { title: `Overview | Dashboard | ${config.site.name}` } 
 
 export default function Page(): React.JSX.Element {
   return (
-    <Grid container spacing={3}>
-      <Grid lg={6} xs={12}>
-        <Link href="\dashboard\graphs\enps">
-          <ENPS chartSeries={[
-            { name: 'Passives', data: [35, 30, 25, 30, 25, 20] }, 
-            { name: 'Promoters', data: [25, 20, 30, 35, 40, 45] }, 
-            { name: 'Detractors', data: [40, 50, 45, 35, 35, 35 ]}
-          ]} sx={{ height: '100%' }} />
-        </Link>
-      </Grid>
-      <Grid lg={6} xs={12}>
-        <Link href="\dashboard\graphs\esat">
-          <ESAT chartSeries={[
-            { name: 'Score', data: [75, 67, 80, 77, 59, 42] }]} sx={{ height: '100%' }} />
-        </Link>
-      </Grid>
-      <Grid lg={6} xs={12}>
-        <Link href="\dashboard\graphs\ees">
+    <Grid lg={6} xs={12}>
+        <Link href="/details/ees">
           <EES chartSeries={[{ name: 'Score', data: [68, 80, 72, 71, 68, 75] }]} sx={{ height: '100%' }} />
         </Link>
       </Grid>
-      <Grid lg={6} xs={12}>
-          <Feedback />
-      </Grid>
-    </Grid>
   );
 }
