@@ -25,7 +25,7 @@ export function ENPS({ chartSeries, sx }: ENPSProps): React.JSX.Element {
 
   return (
     <Card sx={sx}>
-      <CardHeader title="E-NPS" />
+      <CardHeader title="Employee Net Promoter Score (E-NPS)" />
       <CardContent>
         <Chart height={350} options={chartOptions} series={chartSeries} type="line" width="100%" />
       </CardContent>
@@ -39,7 +39,7 @@ function useChartOptions(): ApexOptions {
 
   return {
     chart: { background: 'transparent', stacked: false, toolbar: { show: false } },
-    colors: [theme.palette.primary.main, alpha(theme.palette.primary.main, 0.25)],
+    colors: ['#F7D760', '#016F22', '#FF0000'],
     dataLabels: { enabled: false },
     fill: { opacity: 1, type: 'solid' },
     grid: {
@@ -48,18 +48,22 @@ function useChartOptions(): ApexOptions {
       xaxis: { lines: { show: false } },
       yaxis: { lines: { show: true } },
     },
-    legend: { show: false },
-    stroke: { colors: [theme.palette.primary.main], show: true, width: 2 }, // Changed stroke colors to match the theme and for line charts
+    legend: { show: true, position: 'top', horizontalAlign: 'right' },
+    stroke: { 
+      curve: 'smooth', 
+      width: 2,
+      colors: ['#F7D760', '#016F22', '#FF0000']
+    },
     theme: { mode: theme.palette.mode },
     xaxis: {
       axisBorder: { color: theme.palette.divider, show: true },
       axisTicks: { color: theme.palette.divider, show: true },
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      categories: ['Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023', 'Q1 2024', 'Q2 2024'],
       labels: { offsetY: 5, style: { colors: theme.palette.text.secondary } },
     },
     yaxis: {
-      min: 0, // Set the minimum value for the y-axis
-      max: 10, // Set the maximum value for the y-axis
+      min: 0,
+      max: 100,
       labels: {
         formatter: (value) => (value > 0 ? `${value}` : `${value}`),
         offsetX: -10,

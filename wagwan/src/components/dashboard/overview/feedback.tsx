@@ -13,6 +13,7 @@ function createData(topic: string, significance: number) {
 
 const rows = [
   createData('More open communication', 80),
+  createData('More healthcare benefits', 65),
   createData('Healthier lunch', 50),
   createData('More comfortable chairs', 40),
   createData('More cigarette breaks', 30),
