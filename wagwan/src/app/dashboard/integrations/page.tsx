@@ -17,7 +17,7 @@ import { Stack, Typography } from '@mui/material';
 import { Chart } from '@/components/core/chart';
 
 export interface Integrations {
-  chartSeries: { name: string; data: number[] }[];
+  chartSeries: { name: string; type?: string; data: { x: number; y: number }[] }[];
   sx?: SxProps;
 }
 
@@ -38,10 +38,14 @@ function useChartOptions(): ApexOptions {
   const theme = useTheme();
 
   return {
-    chart: { background: 'transparent', stacked: false, toolbar: { show: false } },
-    colors: ['#00008B'],
+    chart: {
+      background: 'transparent',
+      toolbar: { show: false },
+      type: 'scatter',
+    },
+    colors: ['#00008B', 'rgba(255, 87, 51, 0.5)'],
     dataLabels: { enabled: false },
-    fill: { opacity: 1, type: 'solid' },
+    fill: { opacity: 1 },
     grid: {
       borderColor: theme.palette.divider,
       strokeDashArray: 2,
@@ -49,23 +53,22 @@ function useChartOptions(): ApexOptions {
       yaxis: { lines: { show: true } },
     },
     legend: { show: true, position: 'top', horizontalAlign: 'right' },
-    stroke: { 
-      curve: 'smooth', 
+    stroke: {
+      show: true,
+      curve: 'smooth',
       width: 2,
-      colors: ['#00008B']
     },
     theme: { mode: theme.palette.mode },
     xaxis: {
       axisBorder: { color: theme.palette.divider, show: true },
       axisTicks: { color: theme.palette.divider, show: true },
-      categories: ['Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023', 'Q1 2024', 'Q2 2024'],
       labels: { offsetY: 5, style: { colors: theme.palette.text.secondary } },
     },
     yaxis: {
       min: 0,
       max: 100,
       labels: {
-        formatter: (value) => (value > 0 ? `${value}` : `${value}`),
+        formatter: (value) => `${value}`,
         offsetX: -10,
         style: { colors: theme.palette.text.secondary },
       },
@@ -76,11 +79,29 @@ function useChartOptions(): ApexOptions {
 const mockData = [
   {
     name: 'Employee Turnover',
-    data: [65, 59, 80, 81, 56, 55, 40],
+    type: 'scatter',
+    data: [
+      { x: 1, y: 65 },
+      { x: 2, y: 59 },
+      { x: 3, y: 80 },
+      { x: 4, y: 81 },
+      { x: 5, y: 56 },
+      { x: 6, y: 55 },
+      { x: 7, y: 40 },
+    ],
   },
   {
-    name: 'Predicted Turnover',
-    data: [45, 49, 60, 71, 46, 35, 20],
+    name: 'Regression Line',
+    type: 'line',
+    data: [
+      { x: 1, y: 50 },
+      { x: 2, y: 55 },
+      { x: 3, y: 60 },
+      { x: 4, y: 65 },
+      { x: 5, y: 70 },
+      { x: 6, y: 75 },
+      { x: 7, y: 80 },
+    ],
   },
 ];
 

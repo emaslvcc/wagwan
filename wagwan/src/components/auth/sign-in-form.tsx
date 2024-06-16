@@ -23,13 +23,13 @@ import { authClient } from '@/lib/auth/client';
 import { useUser } from '@/hooks/use-user';
 
 const schema = zod.object({
-  email: zod.string().min(1, { message: 'Employee ID is required' }).email(),
+  email: zod.string().min(1, { message: 'Email is required' }).email(),
   password: zod.string().min(1, { message: 'Password is required' }),
 });
 
 type Values = zod.infer<typeof schema>;
 
-const defaultValues = { email: '', password: '' } satisfies Values;
+const defaultValues = { email: 'admin@precedence.nl', password: 'password' } satisfies Values;
 
 export function SignInForm(): React.JSX.Element {
   const router = useRouter();
@@ -81,7 +81,7 @@ export function SignInForm(): React.JSX.Element {
             name="email"
             render={({ field }) => (
               <FormControl error={Boolean(errors.email)}>
-                <InputLabel>Employee ID</InputLabel>
+                <InputLabel>Email address</InputLabel>
                 <OutlinedInput {...field} label="Email address" type="email" />
                 {errors.email ? <FormHelperText>{errors.email.message}</FormHelperText> : null}
               </FormControl>
@@ -121,12 +121,23 @@ export function SignInForm(): React.JSX.Element {
               </FormControl>
             )}
           />
+          
           {errors.root ? <Alert color="error">{errors.root.message}</Alert> : null}
           <Button disabled={isPending} type="submit" variant="contained">
             Sign in
           </Button>
         </Stack>
       </form>
+      <Alert color="warning">
+        Use{' '}
+        <Typography component="span" sx={{ fontWeight: 700 }} variant="inherit">
+          admin@precedence.nl
+        </Typography>{' '}
+        with password{' '}
+        <Typography component="span" sx={{ fontWeight: 700 }} variant="inherit">
+          password
+        </Typography>
+      </Alert>
     </Stack>
   );
 }
